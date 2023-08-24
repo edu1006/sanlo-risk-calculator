@@ -43,13 +43,13 @@ where: {abosolute_path} = the absolute path dir. </br>
 obs: You need path the absolute dir to application find input and output repository. 
 
 ```console
-java -jar -Dsanlo.riskRating={absolute_path}/sanlo-risk-calculator/input/risk_rating_data.csv -Dsanlo.ltvCacRatio={absolute_path}/sanlo-risk-calculator/input/ltv_cac_ratio.csv -Dsanlo.paybackIndicator={absolute_path}/sanlo-risk-calculator/input/payback.csv -Dsanlo.metricsFilePath={absolute_path}/sanlo-risk-calculator/input/example-app-financial-metrics.csv -Dsanlo.companyFilePath={absolute_path}/sanlo-risk-calculator/input/example-app-companies.csv -Dsanlo.ratingFilePath={absolute_path}/sanlo-risk-calculator/output/rating.csv build/sanlo-risk-calculator.jar
+java -jar -Dsanlo.riskRating={absolute_path}/sanlo-risk-calculator/input/risk_rating_data.csv -Dsanlo.ltvCacRatio={absolute_path}/sanlo-risk-calculator/input/ltv_cac_ratio.csv -Dsanlo.paybackIndicator={absolute_path}/sanlo-risk-calculator/input/payback.csv -Dsanlo.metricsFilePath={absolute_path}/sanlo-risk-calculator/input/example-app-financial-metrics.csv -Dsanlo.companyFilePath={absolute_path}/sanlo-risk-calculator/input/example-app-companies.csv -Dsanlo.ratingFilePath={absolute_path}/sanlo-risk-calculator/output/rating build/sanlo-risk-calculator.jar
 ```
 
 An example using my path to execute it: 
 
 ```console
-java -jar -Dsanlo.riskRating=/Users/eduardo.silva.br/sanlo/sanlo-risk-calculator/input/risk_rating_data.csv -Dsanlo.ltvCacRatio=/Users/eduardo.silva.br/sanlo/sanlo-risk-calculator/input/ltv_cac_ratio.csv -Dsanlo.paybackIndicator=/Users/eduardo.silva.br/sanlo/sanlo-risk-calculator/input/payback.csv -Dsanlo.metricsFilePath=/Users/eduardo.silva.br/sanlo/sanlo-risk-calculator/input/example-app-financial-metrics.csv -Dsanlo.companyFilePath=/Users/eduardo.silva.br/sanlo/sanlo-risk-calculator/input/example-app-companies.csv -Dsanlo.ratingFilePath=/Users/eduardo.silva.br/sanlo/sanlo-risk-calculator/output/rating.csv build/sanlo-risk-calculator.jar
+java -jar -Dsanlo.riskRating=/Users/eduardo.silva.br/sanlo/sanlo-risk-calculator/input/risk_rating_data.csv -Dsanlo.ltvCacRatio=/Users/eduardo.silva.br/sanlo/sanlo-risk-calculator/input/ltv_cac_ratio.csv -Dsanlo.paybackIndicator=/Users/eduardo.silva.br/sanlo/sanlo-risk-calculator/input/payback.csv -Dsanlo.metricsFilePath=/Users/eduardo.silva.br/sanlo/sanlo-risk-calculator/input/example-app-financial-metrics.csv -Dsanlo.companyFilePath=/Users/eduardo.silva.br/sanlo/sanlo-risk-calculator/input/example-app-companies.csv -Dsanlo.ratingFilePath=/Users/eduardo.silva.br/sanlo/sanlo-risk-calculator/output/rating build/sanlo-risk-calculator.jar
  ```   
 
 

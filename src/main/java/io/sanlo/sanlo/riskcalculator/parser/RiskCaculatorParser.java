@@ -34,8 +34,12 @@ public class RiskCaculatorParser {
     }
 
     private void joinCompaniesAndMetrics(List<Company> companies, List<FinancialMetrics> metrics) {
+        List<FinancialMetrics> listMetrics = null;
         for (Company c: companies){
-            c.setFinancialMetrics(metrics.stream().filter(m -> m.getCompany().getId().equals(c.getId())).collect(Collectors.toList()));
+            listMetrics = metrics.stream().filter(m -> m.getCompany().getId().equals(c.getId())).collect(Collectors.toList());
+            Collections.sort(metrics, Comparator.comparing(FinancialMetrics::getDate));
+            c.setFinancialMetrics(listMetrics);
+
         }
     }
 
@@ -48,8 +52,8 @@ public class RiskCaculatorParser {
                 .withColumnSeparator(',');
 
         ObjectWriter csvWriter = csvMapper.writerFor(CompanyRiskRating.class).with(csvSchema);
-        File file = new File(outputRiskRating);
-        System.out.println(this.outputRiskRating);
+        File file = new File(outputRiskRating+ "-" + riskRating.getAppName()+".csv");
+        System.out.println(file.getAbsoluteFile());
 
         FileWriter writer = new FileWriter(file);
 

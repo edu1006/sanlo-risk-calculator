@@ -28,7 +28,8 @@ public class RiskEngineService {
     }
 
     private int calculateRiskScore(Company c) {
-        double marketingSpend = c.getFinancialMetrics().get(0).getMarketingSpend();
+        double marketingSpend = c.getFinancialMetrics().stream().filter(m -> m.getMarketingSpend() != null).mapToDouble(FinancialMetrics::getMarketingSpend).sum();
+                
         int payBackPeriod = findPayBackPeriod(c, marketingSpend);
         double ltv = findLTV(c);
         double cacRatio = calcCACRation(ltv, marketingSpend);
@@ -60,6 +61,6 @@ public class RiskEngineService {
                 return totalDays;
             }
         }
-        throw new IllegalCallerException("no valid payback");
+        return totalDays;
     }
 }
