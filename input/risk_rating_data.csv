@@ -1,0 +1,7 @@
+rating,min_score,max_score,description
+1 Undoubted,85,100,- Virtually no risk\n- Outstanding app performance
+2 Low,65,84,- Minimal risk of credit loss\n- Strong app performance
+3 Moderate,45,64,-Good app performance margin/LTV
+4 Cautionary,25,44,- Deteriorating app performance\nRisk of credit loss
+5 Unsatisfactory,15,24, - High risk of credit loss
+6 Unacceptable,-100000,14, - Definite loss evident
