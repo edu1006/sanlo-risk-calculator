@@ -27,8 +27,8 @@ public class RiskCaculatorParser {
     FinancialMetricsParser financialMetricsParser;
 
     public List<Company> loadCompanyAndFinanancialMetricsFromCSVFile() {
-        List<Company> companies = companyParser.loadCompaniesData();
-        List<FinancialMetrics> metrics =financialMetricsParser.loadFinancialMetrics();
+        List<Company> companies = companyParser.loadDataFromCsv();
+        List<FinancialMetrics> metrics =financialMetricsParser.loadDataFromCsv();
         joinCompaniesAndMetrics(companies,metrics);
         return companies;
     }

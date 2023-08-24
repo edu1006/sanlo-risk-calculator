@@ -10,6 +10,8 @@ import org.junit.runner.RunWith;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class RiskCalculatorServiceTest {

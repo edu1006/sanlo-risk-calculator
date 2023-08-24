@@ -13,15 +13,19 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class FinancialMetricsParser {
+public class FinancialMetricsParser implements SanloParser{
 
 
     @Value("${sanlo.metricsFilePath}")
     private String metricsFilePath;
 
+
+
+
     @SneakyThrows
-    List<FinancialMetrics> loadFinancialMetrics() {
-        CsvSchema schema = loadFinancialSchema();
+    @Override
+    public List loadDataFromCsv() {
+        CsvSchema schema = loadSchema();
         List<FinancialMetrics> metrics = new ArrayList<>();
         FinancialMetrics  metric = null;
         List<Map<String, String>> map = ParserUtils.loadMapFromSchema(schema,metricsFilePath);
@@ -38,12 +42,10 @@ public class FinancialMetricsParser {
             metrics.add(metric);
         }
         return metrics;
-
     }
 
-
-
-    private CsvSchema loadFinancialSchema() {
+    @Override
+    public CsvSchema loadSchema() {
         return CsvSchema.builder()
                 .addColumn("date")
                 .addColumn("app_name")
@@ -52,5 +54,4 @@ public class FinancialMetricsParser {
                 .addColumn("marketing_spend")
                 .build();
     }
-
 }

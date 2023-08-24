@@ -13,12 +13,13 @@ import java.util.Locale;
 import java.util.Map;
 
 @Service
-public class CompanyParser {
+public class CompanyParser implements SanloParser{
     @Value("${sanlo.companyFilePath}")
     private String companyFilePath;
-    @SneakyThrows
-    List<Company> loadCompaniesData(){
-        CsvSchema schema = loadCompanySchema();
+
+    @Override
+    public List<Company> loadDataFromCsv() {
+        CsvSchema schema = loadSchema();
         List<Company> companies = new ArrayList<>();
         Company company = null;
         List<Map<String, String>> map = ParserUtils.loadMapFromSchema(schema,companyFilePath);
@@ -32,11 +33,13 @@ public class CompanyParser {
         return companies;
     }
 
-    private CsvSchema loadCompanySchema() {
+    @Override
+    public CsvSchema loadSchema() {
         return CsvSchema.builder()
                 .addColumn("company_id")
                 .addColumn("company_name")
                 .addColumn("country_code")
                 .build();
+
     }
 }
